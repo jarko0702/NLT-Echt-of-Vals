@@ -1,8 +1,9 @@
 import React from "react";
-import logo from "../../assets/PayPal_logo.png";
+
 import "./SignIn.css";
 
 function SignIn() {
+  const logo = "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg";
   return (
     <div className="signIn">
       <div className="signIn__container">
