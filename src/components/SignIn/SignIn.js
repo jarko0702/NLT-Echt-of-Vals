@@ -10,10 +10,19 @@ function SignIn() {
         <img src={logo} alt="" />
         <div className="signIn__form">
           <form onSubmit={(e) => e.preventDefault()}>
-            <input id="email" placeholder="Type your email adress" />
-            <input id="password" placeholder="Password" />
-            <button>Log In</button>
+            <div className="signIn__form">
+              <input id="email" type="email" placeholder="E-mailadres" />
+            </div>
+            <div className="signIn__form">
+              <input id="password" type="password" placeholder="Wachtwoord" />
+            </div>
+            <div className="signIn__form">
+              <button>Log In</button>
+            </div>
           </form>
+        </div>
+        <div className="signIn__openAcountForm">
+          <button className="signIn__openAcount">Rekening openen</button>
         </div>
       </div>
     </div>
