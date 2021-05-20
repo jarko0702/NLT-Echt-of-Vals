@@ -1,0 +1,12 @@
+.signIn {
+  margin: auto;
+  margin-top: 30vh;
+  width: 50%;
+}
+
+.signIn__container {
+  border: 1px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 10px;
+}

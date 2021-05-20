@@ -1,9 +1,10 @@
-import "./App.css";
+import React from "react";
+import SignIn from "./components/SignIn/SignIn";
 
 function App() {
   return (
-    <div className="App">
-      <h1>NLT Echt of Vals</h1>
+    <div>
+      <SignIn />
     </div>
   );
 }
