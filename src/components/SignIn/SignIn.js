@@ -7,7 +7,13 @@ function SignIn() {
     <div className="signIn">
       <div className="signIn__container">
         <img src={logo} alt="" />
-        <div className="signIn__form">Sign In form</div>
+        <div className="signIn__form">
+          <form onSubmit={(e) => e.preventDefault()}>
+            <input id="email" placeholder="Type your email adress" />
+            <input id="password" placeholder="Password" />
+            <button>Log In</button>
+          </form>
+        </div>
       </div>
     </div>
   );
