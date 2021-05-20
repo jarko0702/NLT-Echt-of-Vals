@@ -1,7 +1,8 @@
 .signIn {
+  display: block;
   margin: auto;
   margin-top: 30vh;
-  width: 50%;
+  width: 400px;
 }
 
 .signIn__container {
@@ -9,4 +10,62 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 10px;
+}
+
+.signIn__container > img {
+  margin: 15px;
+}
+
+.signIn__form {
+  margin-bottom: 10px;
+}
+
+.signIn__form > input {
+  margin: 3px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 75%;
+}
+
+.signIn__form > input:hover {
+  border: 1px solid #0070ba;
+}
+
+.signIn__form > input:focus {
+  border: 1px solid #0070ba;
+}
+
+.signIn__form > button {
+  width: 82%;
+  background-color: #0070ba;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.signIn__form > button:hover {
+  cursor: pointer;
+}
+
+.signIn__openAcountForm {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.signIn__openAcount {
+  width: 82%;
+  background-color: #dee4e9;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #2c2e2f;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.signIn__openAcount:hover {
+  cursor: pointer;
 }
