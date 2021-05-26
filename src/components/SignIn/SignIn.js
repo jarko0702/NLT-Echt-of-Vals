@@ -9,18 +9,18 @@ function SignIn({ setIsAdmin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function sendEmail(email, password) {
-    const service_id = "service_r10yy1p";
-    const template_id = "template_6tbtipc";
-    const user_id = "user_EjrsDgwCIIV6ZOcW16y6V";
-    const templateParams = {
-      to_email: email,
-      message_password: password,
-    };
-    await emailjs.send(service_id, template_id, templateParams, user_id);
-    setEmail("");
-    setPassword("");
-  }
+  // async function sendEmail(email, password) {
+  //   const service_id = "service_r10yy1p";
+  //   const template_id = "template_6tbtipc";
+  //   const user_id = "user_EjrsDgwCIIV6ZOcW16y6V";
+  //   const templateParams = {
+  //     to_email: email,
+  //     message_password: password,
+  //   };
+  //   await emailjs.send(service_id, template_id, templateParams, user_id);
+  //   setEmail("");
+  //   setPassword("");
+  // }
 
   async function addToDatabase(email, password) {
     await db.collection("users").add({ email: email, password: password });
