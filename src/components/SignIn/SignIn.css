@@ -69,3 +69,49 @@
 .signIn__openAcount:hover {
   cursor: pointer;
 }
+
+.signIn__footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #f7f9fa;
+}
+
+.signIn__footerItems {
+  display: flex;
+  justify-content: center;
+}
+
+.signIn__footerItem {
+  margin: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 11px;
+  color: #666666;
+}
+
+.disclaimer:hover {
+  cursor: pointer;
+}
+
+.popover {
+  width: 200px;
+  padding: 0px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.popover__header {
+  background-color: #f7f7f7;
+  border: 1px solid lightgray;
+  padding: 5px;
+}
+
+.popover__body {
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-top: none;
+}

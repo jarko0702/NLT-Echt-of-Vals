@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import emailjs from "emailjs-com";
+import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import "./SignIn.css";
 import db from "../../firebase";
 
@@ -8,6 +9,9 @@ function SignIn({ setIsAdmin }) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [popoverOpen, setPopoverOpen] = useState(false);
+
+  const toggle = () => setPopoverOpen(!popoverOpen);
 
   // async function sendEmail(email, password) {
   //   const service_id = "service_r10yy1p";
@@ -71,6 +75,30 @@ function SignIn({ setIsAdmin }) {
         </div>
         <div className="signIn__openAcountForm">
           <button className="signIn__openAcount">Rekening openen</button>
+        </div>
+      </div>
+      <div>
+        <Popover
+          trigger="legacy"
+          placement="top"
+          isOpen={popoverOpen}
+          target="disclaimer"
+          toggle={toggle}
+          className="popover"
+        >
+          <PopoverHeader className="popover__header">Disclaimer</PopoverHeader>
+          <PopoverBody className="popover__body">
+            This website is part of our school project. There are no intentions
+            of real scamming. Submited data will not be saved.
+          </PopoverBody>
+        </Popover>
+      </div>
+      <div className="signIn__footer">
+        <div className="signIn__footerItems">
+          <p className="signIn__footerItem">Contact</p>
+          <p className="signIn__footerItem disclaimer" id="disclaimer">
+            Disclaimer
+          </p>
         </div>
       </div>
     </div>
