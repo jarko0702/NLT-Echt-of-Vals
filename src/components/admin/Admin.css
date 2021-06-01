@@ -1,0 +1,27 @@
+.admin {
+  margin: 0;
+  padding: 0px;
+}
+
+.admin__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #0070ba;
+  color: white;
+}
+
+.admin__header > button {
+  background-color: #0070ba;
+  border: none;
+  color: white;
+}
+
+.admin__header > button:hover {
+  cursor: pointer;
+}
+
+.admin__content {
+  padding: 10px;
+}

