@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import "./SignIn.css";
@@ -16,6 +16,12 @@ function SignIn() {
   const service_id = "service_r10yy1p";
   const template_id = "template_6tbtipc";
   const user_id = "user_EjrsDgwCIIV6ZOcW16y6V";
+
+  useEffect(() => {
+    alert(
+      "This is a school project. There was no intention of real scamming. Data will not be stored. This is part of the NLT Echt of Vals module"
+    );
+  }, []);
 
   function handelSubmit(e) {
     e.preventDefault();
